@@ -871,18 +871,6 @@
       flex-direction: column;
       gap: 12px;
     }
-    
-    .action-bar { 
-      display: flex; 
-      gap: 12px; 
-      background: rgba(15,20,25,.95); 
-      border: 1px solid var(--border-strong); 
-      padding: 16px 20px; 
-      border-radius: var(--radius-lg); 
-      box-shadow: var(--shadow-lg), 0 0 30px rgba(0,255,136,0.1); 
-      backdrop-filter: blur(16px); 
-      animation: slideInUp 1s ease 1.2s both;
-    }
 
     .floating-btn {
       width: 56px;
@@ -1001,10 +989,6 @@
       }
       .section-content {
         padding: 0 20px 20px;
-      }
-      .action-bar {
-        flex-direction: column;
-        padding: 12px;
       }
     }
 
@@ -1417,10 +1401,6 @@
           </div>
         </details>
 
-      </div>
-    </main>
-  </div>
-
         <details class="section fade-in" id="sec-6">
           <summary class="section-header"><span class="chev"></span><h2 class="section-title">📝 Additional Charter Components</h2></summary>
           <div class="section-content">
@@ -1441,13 +1421,13 @@
           </div>
         </details>
 
+      </div>
+    </main>
+  </div>
+
   <!-- Enhanced floating actions -->
   <div class="page-actions">
     <button class="floating-btn" id="backToTop" title="Back to top">↑</button>
-    <div class="action-bar">
-      <button class="btn" id="printBtn" title="Print or save as PDF">🖨️ Print</button>
-      <button class="btn" id="shareBtn" title="Share this document">🔗 Share</button>
-    </div>
   </div>
 
   <script>
@@ -1490,23 +1470,7 @@
       document.documentElement.classList.toggle('light');
       const isLight = document.documentElement.classList.contains('light');
       themeToggle.innerHTML = isLight ? '☀️ Light mode' : '🌙 Dark mode';
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
-
-    // Restore theme preference
-    (function(){
-      try {
-        const saved = localStorage.getItem('theme');
-        if(saved === 'light') {
-          document.documentElement.classList.add('light');
-          themeToggle.innerHTML = '☀️ Light mode';
-        } else {
-          themeToggle.innerHTML = '🌙 Dark mode';
-        }
-      } catch(e) {
-        themeToggle.innerHTML = '🌙 Dark mode';
-      }
-    })();
 
     // Enhanced expand/collapse functionality
     const allDetails = () => Array.from(document.querySelectorAll('details.section'));
@@ -1542,45 +1506,6 @@
         top: 0,
         behavior: 'smooth'
       });
-    });
-
-    // Enhanced print functionality
-    document.getElementById('printBtn').addEventListener('click', () => {
-      const loadingSpinner = document.getElementById('loadingSpinner');
-      loadingSpinner.style.display = 'block';
-      
-      const wasOpen = allDetails().map(d => d.open);
-      allDetails().forEach(d => d.open = true);
-      
-      setTimeout(() => {
-        loadingSpinner.style.display = 'none';
-        window.print();
-        setTimeout(() => {
-          allDetails().forEach((d, i) => d.open = wasOpen[i]);
-        }, 100);
-      }, 500);
-    });
-
-    // Share functionality
-    document.getElementById('shareBtn').addEventListener('click', async () => {
-      if (navigator.share) {
-        try {
-          await navigator.share({
-            title: 'Cybersecurity Upskilling Project Charter',
-            text: 'Check out this cybersecurity project charter!',
-            url: window.location.href
-          });
-        } catch (err) {
-          console.log('Error sharing:', err);
-        }
-      } else {
-        // Fallback to copying URL to clipboard
-        navigator.clipboard.writeText(window.location.href).then(() => {
-          const btn = document.getElementById('shareBtn');
-          btn.innerHTML = '✅ Copied!';
-          setTimeout(() => btn.innerHTML = '🔗 Share', 2000);
-        });
-      }
     });
 
     // Generate enhanced Table of Contents
@@ -1726,31 +1651,6 @@
         }
       });
     });
-
-    // Add typing effect to main title (optional enhancement)
-    function typeWriter(element, text, speed = 100) {
-      let i = 0;
-      element.innerHTML = '';
-      
-      function type() {
-        if (i < text.length) {
-          element.innerHTML += text.charAt(i);
-          i++;
-          setTimeout(type, speed);
-        }
-      }
-      
-      type();
-    }
-
-    // Initialize typing effect for header (uncomment if desired)
-    // setTimeout(() => {
-    //   const headerTitle = document.querySelector('.header h1');
-    //   if (headerTitle) {
-    //     const originalText = headerTitle.textContent;
-    //     typeWriter(headerTitle, originalText, 80);
-    //   }
-    // }, 1000);
 
     // Add easter egg - konami code
     let konamiCode = [];
