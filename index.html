@@ -1304,12 +1304,12 @@
                   <tr>
                     <td>⚙️ Labor and equipment costs</td>
                     <td>$0(I have all the equipment needed to do this project.)</td>
-                    <td>Exam and preparation materials</td>
+                    <td>Costs here pertain to equipment and resources needed to complete the project.</td>
                   </tr>
                   <tr>
                     <td>🎓 Online cybersecurity course materials, certification fees, etc</td>
                     <td>$0(Some certifications are free to take and resources to study are free)</td>
-                    <td>All material costs to acquire a cybersecurity certification</td>
+                    <td>All material costs required to acquire a cybersecurity certification, such as textbooks and practice exams</td>
                   </tr>
                   <tr>
                     <td>🛡️ Contingency reserve</td>
@@ -1357,71 +1357,64 @@
           </div>
         </details>
  
-        <details class="section fade-in" id="sec-11">
-          <summary class="section-header"><span class="chev"></span><h2 class="section-title">📊 10. Weekly Status Report</h2></summary>
-          <div class="section-content">
-            <div class="status-report-template">
-              <div class="status-header-section">
-                <div class="status-field">
-                  <label class="status-label">📝 Report Title</label>
-                  <input type="text" class="status-input" placeholder="e.g., Week 3 Status Report - October 2025" />
-                </div>
-                
-                <div class="status-field">
-                  <label class="status-label">🎯 Project Goal</label>
-                  <textarea class="status-textarea" rows="3" placeholder="Describe the main project goal..."></textarea>
-                </div>
-                
-                <div class="status-field">
-                  <label class="status-label">👤 Project Manager</label>
-                  <input type="text" class="status-input" placeholder="Your name" />
-                </div>
-                
-                <div class="status-field">
-                  <label class="status-label">💚 Overall Project Health</label>
-                  <select class="status-select">
-                    <option value="">Select status...</option>
-                    <option value="green">🟢 Green - On Track</option>
-                    <option value="yellow">🟡 Yellow - At Risk</option>
-                    <option value="red">🔴 Red - Off Track</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="status-field">
-                <label class="status-label">✅ Accomplishments This Week</label>
-                <textarea class="status-textarea" rows="5" placeholder="List what was completed this week..."></textarea>
-              </div>
-
-              <div class="status-field">
-                <label class="status-label">📅 Plans for Next Week</label>
-                <textarea class="status-textarea" rows="5" placeholder="List what you plan to work on next week..."></textarea>
-              </div>
-
-              <div class="status-field">
-                <label class="status-label">🎯 Upcoming Milestones</label>
-                <textarea class="status-textarea" rows="4" placeholder="List upcoming milestones and their target dates..."></textarea>
-              </div>
-
-              <div class="status-field">
-                <label class="status-label">⚠️ Issues & Risk Mitigation</label>
-                <textarea class="status-textarea" rows="5" placeholder="Describe any issues, risks, and how you plan to address them..."></textarea>
-              </div>
-
-              <div class="status-field">
-                <label class="status-label">🔄 Changes Since Last Report</label>
-                <textarea class="status-textarea" rows="4" placeholder="Note any changes to scope, timeline, budget, or approach..."></textarea>
-              </div>
-
-              <div class="status-actions">
-                <button class="btn btn-primary" id="saveReport">💾 Save Report</button>
-                <button class="btn btn-secondary" id="clearReport">🗑️ Clear Form</button>
-                <button class="btn btn-secondary" id="exportReport">📄 Export as Text</button>
-              </div>
+<body>
+    <div class="report-container">
+        <h1>Section 11: Weekly Status Report</h1>
+        
+        <div class="report-field">
+            <label>Report Title:</label>
+            <div class="content" id="reportTitle">Weekly Project Status - Week of [Date]</div>
+        </div>
+        
+        <div class="report-field">
+            <label>Project Goal:</label>
+            <div class="content" id="projectGoal">Complete project deliverables on time and within budget</div>
+        </div>
+        
+        <div class="report-field">
+            <label>Project Manager:</label>
+            <div class="content" id="projectManager">John Smith</div>
+        </div>
+        
+        <div class="health-section">
+            <h3>Overall Project Health</h3>
+            <div class="status-display green" id="projectHealth">
+                Green - On Track
             </div>
-          </div>
-        </details>
-
+        </div>
+        
+        <div class="report-field">
+            <label>Accomplishments This Week:</label>
+            <div class="content multi-line" id="accomplishments">• Completed phase 1 testing
+• Finalized design specifications
+• Conducted stakeholder review meeting</div>
+        </div>
+        
+        <div class="report-field">
+            <label>Plans for Next Week:</label>
+            <div class="content multi-line" id="plans">• Begin phase 2 implementation
+• Schedule team training sessions
+• Review budget allocation</div>
+        </div>
+        
+        <div class="report-field">
+            <label>Upcoming Milestones:</label>
+            <div class="content multi-line" id="milestones">• Phase 2 completion - [Date]
+• Client presentation - [Date]
+• Final deliverable - [Date]</div>
+        </div>
+        
+        <div class="report-field">
+            <label>Issues & Risk Mitigation:</label>
+            <div class="content multi-line" id="issues">No major issues at this time. Monitoring resource availability for potential delays.</div>
+        </div>
+        
+        <div class="report-field">
+            <label>Changes Since Last Report:</label>
+            <div class="content multi-line" id="changes">Timeline adjusted by 2 days to accommodate additional testing requirements.</div>
+        </div>
+    </div>
+         
       </div>
     </main>
   </div>
